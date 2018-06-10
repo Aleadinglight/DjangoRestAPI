@@ -11,6 +11,6 @@ Change "ProjectFolder" and "portnumber" to the existing project and the wanted i
 
 ## Project: 
 
-### Create a poll: [detail](https://github.com/Aleadinglight/DjangoRestAPI/tree/master/polls)
+### [Create a poll](https://github.com/Aleadinglight/DjangoRestAPI/tree/master/polls)
 Create a poll for voting purpose.
 
