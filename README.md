@@ -26,7 +26,7 @@ From command line:
 $ cd projectfolder
 $ python manage.py runserver portnumber
 ```
-Change `projectfolder` and `portnumber` to the existing project and the wanted ip port. The application will be running in: http://127.0.0.1: *portnumber* /
+Change `projectfolder` and `portnumber` to the existing project and the wanted ip port. The application will be running in: http://127.0.0.1:portnumber/
 
 ## Project: 
 
