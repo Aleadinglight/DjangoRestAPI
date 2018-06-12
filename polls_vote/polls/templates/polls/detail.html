@@ -1,17 +1,36 @@
-<h1>{{ question.question_text }}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-{% if question.choice_set.all.count != 0 %}
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-<form action="{% url 'polls:vote' question.id %}" method="post">
-{% csrf_token %}
-{% for choice in question.choice_set.all %}
-<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-{% endfor %}
-<input type="submit" value="Vote" />
-</form>
-{% else %}
-<p>There aren't any choices.</p>
-{% endif %}
+<body>
+	<div class="container">
+		<h1>{{ question.question_text }}</h1>
+		<div class="list-group">
+		{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+		{% if question.choice_set.all.count != 0 %}
+
+		<form action="{% url 'polls:vote' question.id %}" method="post">
+			{% csrf_token %}
+			{% for choice in question.choice_set.all %}
+			<div class="list-group-item">
+				<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+				<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+			</div>
+			{% endfor %}
+			<br />
+			<input type="submit" value="Vote" />
+		</form>
+		</div>
+		{% else %}
+		<p>There aren't any choices.</p>
+		{% endif %}
+	</div>
+</body>
+</html>
