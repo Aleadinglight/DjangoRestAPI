@@ -1,9 +1,22 @@
-<h1>{{ question.question_text }}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<ul>
-{% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+	<h1>{{ question.question_text }}</h1>
+	<div class="list-group">
+	{% for choice in question.choice_set.all %}
+		<p class="list-group-item">{{ choice.choice_text }}<span class="badge">{{ choice.votes }} vote{{ choice.votes|pluralize }}</span></p>     
+	{% endfor %}
+	</div>
+	<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+</div>
+</body>
+</html>
