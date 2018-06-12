@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("ul").hide();
+    });
+});
+</script>
+</head>
+<body>
+	<button>Click me to hide paragraphs</button>
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
@@ -7,3 +22,5 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+</body>
+</html>
