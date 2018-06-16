@@ -33,6 +33,6 @@ Change `projectfolder` and `portnumber` to the existing project and the wanted i
 ### [Create a poll](https://github.com/Aleadinglight/DjangoRestAPI/tree/master/polls_vote)
 Create a poll for voting purpose.
 
-### [Company]:(https://github.com/Aleadinglight/DjangoRestAPI/tree/master/company)
+### [Company](https://github.com/Aleadinglight/DjangoRestAPI/tree/master/company)
 Users and groups in a company. Serializer is implemented.
 
